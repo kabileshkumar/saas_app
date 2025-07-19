@@ -6,11 +6,11 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 
 import React from "react";
-const cancreateCompanion = await newCompanionPermissions();
 
 const NewCompanion = async () => {
   const { userId } = await auth();
   if (!userId) redirect("/sign-in");
+  const cancreateCompanion = await newCompanionPermissions();
   return (
     <main className="min-lg:w-1/3 min-md:w-2/3 items-center justify-center">
       {cancreateCompanion ? (
